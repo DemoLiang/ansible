@@ -1,0 +1,5 @@
+---
+- name: init k8s
+  hosts: k8s
+  roles:
+      - k8s

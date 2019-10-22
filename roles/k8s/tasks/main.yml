@@ -1,0 +1,10 @@
+---
+# tasks file for roles/k8s
+
+- name: copy k8s binary to host
+  copy: src={{item}} desc=/usr/bin/ mode=0600
+  with_items:
+      - kubelet
+  tags:
+      - k8s
+            

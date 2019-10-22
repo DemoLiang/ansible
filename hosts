@@ -1,0 +1,6 @@
+[master]
+192.168.0.100 ansible_ssh_user=root ansible_ssh_pass=123456
+[node]
+
+[k8s]
+
