@@ -1,0 +1,1 @@
+KUBE_PROXY_ARGS="--master=http://172.16.250.220:8080 --hostname-override=172.16.250.220 --alsologtostderr=false --log-dir=/var/log/kubernetes --v=2"

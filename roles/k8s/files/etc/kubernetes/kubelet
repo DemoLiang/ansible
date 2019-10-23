@@ -1,0 +1,1 @@
+KUBELET_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig --cgroup-driver=systemd --fail-swap-on=false --hostname-override=172.16.250.220 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"

@@ -1,0 +1,1 @@
+KUBE_CONTROLLER_MANAGER_ARGS="--service-account-private-key-file=/etc/kubernetes/ca/serviceaccount.key --master=http://172.16.250.220:8080 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"
