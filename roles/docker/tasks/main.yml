@@ -1,2 +1,43 @@
 ---
 # tasks file for roles/docker
+
+#- name: yum install docker 
+#  yum: src={{item}} state=latest
+#  ignore_errors: yes
+#  with_items:
+#      - docker-ce
+#  tags:
+#      - docker
+
+- name: copy docker binary to node
+  copy: src={{item}} desc=/usr/bin/ mode=0600
+  with_items:
+      - docker-ce-19.03.4-3.el7.x86_64.rpm
+      - docker-ce-selinux-17.03.3.ce-1.el7.noarch.rpm
+  tags:
+      - docker
+
+#- name: copy docker service to node
+#  template: src={{item}} dest=/usr/lib/systemd/system/
+#  with_items:
+#      - docker.service
+#  tags:
+#      - docker
+
+- name: install docker
+  shell: rpm -i {{item}}
+  with_items:
+      - docker-ce-19.03.4-3.el7.x86_64.rpm
+      - docker-ce-selinux-17.03.3.ce-1.el7.noarch.rpm
+  tags:
+      - docker
+
+- name: systemctl start docker
+  shell: systemctl daemon reload
+  tags:
+      - docker
+
+- name: install docker
+  service: name=docker state=started enabled=yes
+  tags:
+      - docker
