@@ -1,6 +1,26 @@
 [master]
-192.168.0.100 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.200 ansible_ssh_user=root ansible_ssh_pass=vimliang
 [node]
+172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
 
 [k8s]
+172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
 
+[flannel]
+172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+
+[etcd]
+172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+
+[docker]
+172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang

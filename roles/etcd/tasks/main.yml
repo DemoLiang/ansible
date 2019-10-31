@@ -1,2 +1,17 @@
 ---
 # tasks file for roles/etcd
+
+- name: copy etcd binary to node
+  copy: src={{item}} desc=/usr/bin/ mode=0755
+  with_items:
+      - etcd
+      - etcdctl
+  tags:
+      - etcd
+
+- name: copy etcd conf to node
+  copy: src={{item}} desc=/etc/etcd/ mode=0600
+  with_items:
+      - etcd.conf
+  tags:
+      - etcd

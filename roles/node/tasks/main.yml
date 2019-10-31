@@ -1,2 +1,10 @@
 ---
 # tasks file for roles/node
+
+- name: set disable firewalld and setenforce 0
+  shell: rpm -i {{item}}
+  shell: systemctl disable firewalld
+  shell: systemctl stop firewalld
+  shell: setenforce 0
+  tags:
+      - node

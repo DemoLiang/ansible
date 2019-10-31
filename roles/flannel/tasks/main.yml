@@ -1,0 +1,10 @@
+---
+# tasks file for roles/flannel
+
+- name: copy flannel binary to node
+  copy: src={{item}} desc=/usr/bin/ mode=0755
+  with_items:
+      - flanneld
+      - mk-docker-opts.sh
+  tags:
+      - flannel
