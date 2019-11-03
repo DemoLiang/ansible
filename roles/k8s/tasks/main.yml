@@ -2,9 +2,40 @@
 # tasks file for roles/k8s
 
 - name: copy k8s binary to host
-  copy: src={{item}} desc=/usr/bin/ mode=0600
+  copy: src=bin/{{item}} desc=/usr/bin/ mode=0600
   with_items:
       - kubelet
+      - kube-apiserver 
+      - kube-controller-manager
+      - kube-scheduler
+      - kube-proxy
+      - kubectl
+  tags:
+      - k8s
+
+- name: copy k8s service to host
+  copy: src=service/{{item}} desc=/usr/lib/systemd/system/ mode=0600
+  with_items:
+      - kubelet.service
+      - kube-apiserver.service
+      - kube-controller-manager.service
+      - kube-scheduler.service
+      - kube-proxy.service
+      - kubectl.service
+  tags:
+      - k8s
+
+- name: copy k8s conf to host
+  copy: src=conf/{{item}} desc=/etc/kubenetes/ mode=0600
+  with_items:
+      - kubelet
+      - apiserver
+      - controller-manager
+      - scheduler
+      - proxy
+      - kubectl
+      - kubeconfig
+      - ca 
   tags:
       - k8s
             
