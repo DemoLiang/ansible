@@ -1,0 +1,5 @@
+---
+- name: init flannel
+  hosts: flannel
+  roles:
+      - flannel

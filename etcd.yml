@@ -1,0 +1,5 @@
+---
+- name: init etcd
+  hosts: etcd
+  roles:
+      - etcd

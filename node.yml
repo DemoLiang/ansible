@@ -1,0 +1,5 @@
+---
+- name: init node
+  hosts: node
+  roles:
+      - node

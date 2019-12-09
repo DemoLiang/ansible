@@ -1,5 +1,6 @@
 [master]
 172.16.250.200 ansible_ssh_user=root ansible_ssh_pass=vimliang
+
 [node]
 172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
 172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang

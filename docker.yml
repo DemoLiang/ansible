@@ -1,0 +1,5 @@
+---
+- name: init docker
+  hosts: docker
+  roles:
+      - docker
