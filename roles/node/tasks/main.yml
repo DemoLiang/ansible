@@ -2,9 +2,30 @@
 # tasks file for roles/node
 
 - name: set disable firewalld and setenforce 0
-  shell: rpm -i {{item}}
   shell: systemctl disable firewalld
   shell: systemctl stop firewalld
+  shell: systemctl stop postfix
+  shell: systemctl disable postfix
   shell: setenforce 0
+  shell: getenforce
+  tags:
+      - node
+
+- name: yum install tools
+  shell: yum install -y net-tools
+  tags:
+      - node
+
+- name: add hosts
+  lineinfile:
+      path: /tmp/hosts
+      line: "{{hosts_dns}}"
+  tags:
+      - node
+
+- name: rpm install
+  #shell: rpm -i {{item}}
+  shell: 
+  #with_items:
   tags:
       - node

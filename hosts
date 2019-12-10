@@ -1,27 +1,27 @@
 [master]
-172.16.250.200 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
 
 [node]
-172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.225 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.226 ansible_ssh_user=root ansible_ssh_pass=123456
 
 [k8s]
-172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.225 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.226 ansible_ssh_user=root ansible_ssh_pass=123456
 
 [flannel]
-172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.225 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.226 ansible_ssh_user=root ansible_ssh_pass=123456
 
 [etcd]
-172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.225 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.226 ansible_ssh_user=root ansible_ssh_pass=123456
 
 [docker]
-172.16.250.201 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.202 ansible_ssh_user=root ansible_ssh_pass=vimliang
-172.16.250.203 ansible_ssh_user=root ansible_ssh_pass=vimliang
+172.16.250.224 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.225 ansible_ssh_user=root ansible_ssh_pass=123456
+172.16.250.226 ansible_ssh_user=root ansible_ssh_pass=123456

@@ -1,4 +1,10 @@
-master=master
-node1=master
-node2=node2
-node3=node3
+k8s-master_ip: "172.16.250.224"
+k8s-node2_ip: "172.16.250.225"
+k8s-node3_ip: "172.16.250.226"
+
+
+hosts_dns: "
+k8s-master 172.16.250.224 \n
+k8s-node2 172.16.250.225 \n
+k8s-node3 172.16.250.226 \n
+"
