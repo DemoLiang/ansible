@@ -18,7 +18,7 @@
 
 - name: add hosts
   lineinfile:
-      path: /tmp/hosts
+      path: /etc/hosts
       line: "{{hosts_dns}}"
   tags:
       - node

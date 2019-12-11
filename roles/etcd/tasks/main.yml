@@ -2,16 +2,38 @@
 # tasks file for roles/etcd
 
 - name: copy etcd binary to node
-  copy: src={{item}} desc=/usr/bin/ mode=0755
+  copy: src={{item}} dest=/usr/bin/{{item}} mode=0755
   with_items:
       - etcd
       - etcdctl
   tags:
       - etcd
+- name: mkdir etcd
+  shell: mkdir /etc/etcd/
+  ignore_errors: yes
+  tags:
+      - etcd
 
 - name: copy etcd conf to node
-  copy: src={{item}} desc=/etc/etcd/ mode=0600
+  copy: src={{item}} dest=/etc/etcd/{{item}} mode=0600
   with_items:
       - etcd.conf
+  tags:
+      - etcd
+
+- name: copy etcd service to node
+  copy: src={{item}} dest=/usr/lib/systemd/system/{{item}} mode=0600
+  with_items:
+      - etcd.service
+  tags:
+      - etcd
+
+- name: start etcd
+  shell: systemctl restart etcd
+  tags:
+      - etcd
+
+- name: enable etcd
+  shell: systemctl enable etcd
   tags:
       - etcd
