@@ -14,12 +14,14 @@
   tags:
       - etcd
 
-- name: copy etcd conf to node
+- name: copy etcd master conf to node
   copy: src={{item}} dest=/etc/etcd/{{item}} mode=0600
+  when: inventory_host in groups['k8s-master']
   with_items:
-      - etcd.conf
+      - etcd1.conf
   tags:
       - etcd
+
 
 - name: copy etcd service to node
   copy: src={{item}} dest=/usr/lib/systemd/system/{{item}} mode=0600
