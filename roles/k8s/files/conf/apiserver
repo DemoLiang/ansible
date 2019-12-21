@@ -1,1 +1,4 @@
+KUBELET_PORT="--kubelet-port=10250"
+#KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ServiceAccount,ResourceQuota"
+KUBE_ADMISSION_CONTROL="--admission-control=NamespaceLifecycle,NamespaceExists,LimitRanger,SecurityContextDeny,ResourceQuota"
 KUBE_API_ARGS="--service-account-key-file=/etc/kubernetes/ca/serviceaccount.key --storage-backend=etcd3 --etcd-servers=http://127.0.0.1:2379 --insecure-bind-address=0.0.0.0 --insecure-port=8080 --service-cluster-ip-range=169.169.0.0/16 --service-node-port-range=1-65535 --logtostderr=false --log-dir=/var/log/kubernetes --v=2 "

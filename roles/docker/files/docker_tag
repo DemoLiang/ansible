@@ -1,0 +1,5 @@
+
+docker pull registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1
+docker tag registry.cn-hangzhou.aliyuncs.com/google_containers/pause:3.1 k8s.gcr.io/pause:3.1
+docker pull docker tag registry
+docker run -d -p 5000:5000 --restart=always --name registry -v /opt/myregistry/:/registry registry
