@@ -58,16 +58,16 @@ data:
           lameduck 5s
         }
         ready
-        kubernetes cluster.local  10.254.0.0/16 {
+        kubernetes CLUSTER_DOMAIN REVERSE_CIDRS {
           fallthrough in-addr.arpa ip6.arpa
-        }
+        }FEDERATIONS
         prometheus :9153
-        forward . /etc/resolv.conf
+        forward . UPSTREAMNAMESERVER
         cache 30
         loop
         reload
         loadbalance
-    }
+    }STUBDOMAINS
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -123,7 +123,7 @@ spec:
         volumeMounts:
         - name: config-volume
           mountPath: /etc/coredns
-          #readOnly: true
+          readOnly: true
         ports:
         - containerPort: 53
           name: dns
@@ -142,20 +142,20 @@ spec:
             drop:
             - all
           readOnlyRootFilesystem: true
-        #livenessProbe:
-        #  httpGet:
-        #    path: /health
-        #    port: 8080
-        #    scheme: HTTP
-        #  initialDelaySeconds: 60
-        #  timeoutSeconds: 5
-        #  successThreshold: 1
-        #  failureThreshold: 5
-        #readinessProbe:
-        #  httpGet:
-        #    path: /ready
-        #    port: 8181
-        #    scheme: HTTP
+        livenessProbe:
+          httpGet:
+            path: /health
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 60
+          timeoutSeconds: 5
+          successThreshold: 1
+          failureThreshold: 5
+        readinessProbe:
+          httpGet:
+            path: /ready
+            port: 8181
+            scheme: HTTP
       dnsPolicy: Default
       volumes:
         - name: config-volume
@@ -180,7 +180,7 @@ metadata:
 spec:
   selector:
     k8s-app: kube-dns
-  clusterIP: 10.254.0.10
+  clusterIP: CLUSTER_DNS_IP
   ports:
   - name: dns
     port: 53

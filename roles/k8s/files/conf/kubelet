@@ -1,4 +1,4 @@
-KUBELET_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig --cgroup-driver=systemd --fail-swap-on=false --hostname-override=172.16.250.220 --logtostderr=false --log-dir=/var/log/kubernetes --v=2"
+KUBELET_ARGS="--kubeconfig=/etc/kubernetes/kubeconfig --cgroup-driver=systemd --fail-swap-on=false --hostname-override=172.16.250.224 --cluster_dns=10.254.0.10 --cluster_domain=cluster.local --logtostderr=false --log-dir=/var/log/kubernetes --v=2"
 KUBELET_PORT="--port=10250"
 KUBELET_API_SERVER="--api-servers=http://172.16.250.224:8080"
 #KUBELET_POD_INFRA_CONTAINER="--pod-infra-container-images="

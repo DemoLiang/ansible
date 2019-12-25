@@ -22,3 +22,7 @@ export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087
 
 
 docker 安装注意修改/etc/sysconfig/docker 里面selinux 否则会导致coredns一直起不来，查了半天
+
+
+参考：
+https://www.codeleading.com/article/3793254298/
