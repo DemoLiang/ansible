@@ -19,3 +19,6 @@ work|node3|
 由于mac上使用带密码的形式跑ansilbe会报错,需要安装sshpass,mac上安装方式如下
 linux 应该可以直接yum install -y sshpass就可以
 export http_proxy=http://127.0.0.1:1087;export https_proxy=http://127.0.0.1:1087;brew install https://raw.githubusercontent.com/kadwanev/bigboybrew/master/Library/Formula/sshpass.rb
+
+
+docker 安装注意修改/etc/sysconfig/docker 里面selinux 否则会导致coredns一直起不来，查了半天
